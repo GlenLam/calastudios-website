@@ -73,10 +73,11 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; letter-spacing:
 
 /* The logo's smile, under "yours" */
 .smile { position: relative; white-space: nowrap; }
-.smile::after {
-  content: ""; position: absolute; left: 6%; right: 12%; bottom: -0.36em; height: 0.34em;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M4 4 Q50 38 96 4' fill='none' stroke='%23ea9010' stroke-width='6' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+.smile svg {
+  position: absolute; left: 6%; width: 82%; bottom: -0.36em; height: 0.34em;
+  overflow: visible; fill: none; stroke: var(--orange); stroke-width: 0.09em; stroke-linecap: round;
 }
+.smile path { vector-effect: non-scaling-stroke; }
 
 /* Three app icons, fanned like cards on a table */
 .hero-icons { position: relative; height: 300px; }
