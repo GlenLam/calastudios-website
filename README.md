@@ -19,13 +19,14 @@ GitHub Pages can't send server redirects, so the three redirect pages use `<meta
 
 ## Layout
 
-- `assets/css/site.css`: the one stylesheet. The studio frame is neutral (paper `#F6F4EF`, ink `#161514`) and follows the system's light or dark mode. Each app's color comes from its icon and is used only on its card: Stop Motion `#8438EC`, WallyPaper `#D9E021`, Kawali `#C75C28`. Type is the system font (SF Pro on Apple devices), so the site downloads no fonts.
+- `assets/css/site.css`: the one stylesheet. Light only, like the app sites. The colors are the original Google Sites page's: white, CaLa orange `#EA9010` (the logo, buttons, the smile under "yours", arrows), cream `#FDF4E7` (that orange at 10% on white, for the hero, the "How we make apps" band and the app cards' icon panels), text `#212121` and `#6A6A6A`, and the light green footer `#C9E3AD`. Button text is `#212121`, not white, because white on the orange is too faint to read. Type is the system font (SF Pro on Apple devices), so the site downloads no fonts.
 - `assets/js/site.js`: fills in the footer year. Nothing else.
 - `assets/img/`:
-  - `icon-*.png` and `mark.webp`: the studio mark, an ink square with "CL" and three dots in the app colors. It's drawn in HTML and rendered with headless Chrome. The 16 and 32 favicons drop the dots and round the corners.
+  - `logo.webp`: the "calastudios" wordmark on its orange pill, taken from the Google Sites header image (1288×393) and resized to 132 px tall. It shows at 40 px.
+  - `icon-*.png`: the "ala" smiley (`CS_emoji.png`, 513 px). The 16 and 32 favicons keep its rounded corners. The 180, 192 and 512 icons are filled out to a square in its orange `#EA9123`, because iOS rounds touch icons itself and would turn transparent corners black.
   - `app-*.webp`: each app's `icon-512.png` from its own site, resized to 256 with `cwebp -q 86`.
   - `app-store-badge.svg`: Apple's badge.
-  - `og-image.jpg`: a 1200×630 HTML composition (site.css, the mark, the headline and the three icons), rendered with headless Chrome.
+  - `og-image.jpg`: a 1200×630 HTML composition (site.css, the wordmark, the headline and the three icons on cream), rendered with headless Chrome.
 - The four icons in "How we make apps" follow Lucide (ISC license) and are inlined with `currentColor`.
 - `sitemap.xml`, `robots.txt`, `site.webmanifest`: the usual metadata.
 - `CNAME`: `calastudios.app`, so the custom domain survives redeploys.
@@ -33,14 +34,14 @@ GitHub Pages can't send server redirects, so the three redirect pages use `<meta
 
 ## Updating
 
-Edit the HTML, commit to `main`, push. Pages redeploys in about a minute. Every page links the stylesheet as `site.css?v=YYYYMMDD`: **when `site.css` changes, bump that date on all six pages**, or visitors can get new HTML with old styles.
+Edit the HTML, commit to `main`, push. Pages redeploys in about a minute. Every page links the stylesheet as `site.css?v=YYYYMMDD`: **when `site.css` changes, bump that date on all six pages** (add a letter for a second change the same day), or visitors can get new HTML with old styles.
 
 App facts on this site (the one-line descriptions, devices, App Store URLs) follow each app's own site. When one changes there, update its card here and its entry in the JSON-LD at the top of `index.html`. The "How we make apps" promises must stay true for every app: no ads or tracking, no account, things kept on the device. Check a new app against them before adding it.
 
 ### Adding an app
 
 1. Add its icon as `assets/img/app-<name>.webp` (256 px, from its site's `icon-512.png`).
-2. Copy a card (`<li class="app app--…">`) in `index.html`, and add its `--app-color` to `site.css`, sampled from the icon.
+2. Copy a card (`<li class="app">`) in `index.html`.
 3. Add a row to the help list, a link in `privacy.html`'s "Our apps", and a `SoftwareApplication` entry to the JSON-LD.
 4. The hero shows three fanned icons. With a fourth app, choose which three appear there or adjust the positions.
 5. Add a footer link back to https://calastudios.app on the app's own site.
