@@ -36,7 +36,7 @@ GitHub Pages can't send server redirects, so the three redirect pages use `<meta
 
 Edit the HTML, commit to `main`, push. Pages redeploys in about a minute. Every page links the stylesheet as `site.css?v=YYYYMMDD`: **when `site.css` changes, bump that date on all six pages** (add a letter for a second change the same day), or visitors can get new HTML with old styles.
 
-App facts on this site (the one-line descriptions, devices, App Store URLs) follow each app's own site. When one changes there, update its card here and its entry in the JSON-LD at the top of `index.html`. The "How we make apps" promises must stay true for every app: no ads or tracking, no account, things kept on the device. Check a new app against them before adding it.
+App facts on this site (the one-line descriptions, devices, App Store URLs) follow each app's own site. When one changes there, update its card here and its entry in the JSON-LD at the top of `index.html`. The "How we make apps" promises must stay true for every app: no ads or tracking, things kept on the device, and people who answer email. Kawali deliberately makes no "no account" claim, so the studio site doesn't either. Check a new app against them before adding it.
 
 ### Adding an app
 
